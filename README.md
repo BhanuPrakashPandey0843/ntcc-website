@@ -1,6 +1,6 @@
 
 git add .
-git commit -m "added the footer"
+git commit -m "added the full projects "
 git push -u origin main
 
 

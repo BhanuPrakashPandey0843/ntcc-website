@@ -40,10 +40,10 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex flex-wrap gap-4 mt-6">
             {[
-              { Icon: RiMailLine, link: "#" },
-              { Icon: RiInstagramLine, link: "#" },
-              { Icon: RiLinkedinBoxLine, link: "#" },
-              { Icon: RiGlobalLine, link: "#" },
+               { Icon: RiMailLine, link: "mailto:helpersntcc@gmail.com" },
+  { Icon: RiInstagramLine, link: "https://www.instagram.com/ntcc_cse/" },
+  { Icon: RiLinkedinBoxLine, link: "https://www.linkedin.com/in/helpers-763135381/" },
+  { Icon: RiGlobalLine, link: "https://helpers.com" },
             ].map(({ Icon, link }, i) => (
               <motion.a
                 key={i}
