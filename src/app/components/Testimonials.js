@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     text: "Helpers made my NTCC project so easy! They provided a PPT, report, and proper guidance at a price I could actually afford. Truly a lifesaver in my final semester.",
-    name: "Aditya Mehra",
+    name: "Akash Gupta",
     role: "Amity Student",
     img: "https://static.vecteezy.com/system/resources/previews/012/971/549/non_2x/unknown-person-with-paper-bag-on-hand-feel-confused-and-frustrated-man-or-woman-with-package-with-face-expression-feeling-doubts-illustration-free-vector.jpg",
     color: "#4BB04F",
