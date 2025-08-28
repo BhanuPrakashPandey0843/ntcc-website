@@ -41,37 +41,47 @@ const Pricing = () => {
             Professional Project Assistance
           </h2>
           <p className="text-gray-600 text-sm leading-relaxed max-w-md">
-            We provide reliable and affordable support for students and
-            professionals from final year projects to resume
-            optimization. Our goal is to help you save time, stay stress-free,
-            and make your work stand out.
+            Affordable, student-friendly pricing with complete transparency. 
+            Pay only for what you need – from resumes to complete projects.
           </p>
 
-          {/* Features */}
-          <ul className="space-y-3">
-            <li className="flex items-start gap-3">
-              <CheckCircle className="text-[#4BB04F] w-5 h-5 mt-1" />
-              <span className="text-gray-700 text-sm">
-                Complete NTCC final year projects with proper documentation.
-              </span>
+          {/* Features with Pricing */}
+          <ul className="space-y-4">
+            <li className="flex items-start justify-between gap-3 border-b pb-2">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="text-[#4BB04F] w-5 h-5 mt-1" />
+                <span className="text-gray-700 text-sm font-medium">
+                  Resume (ATS-Friendly)
+                </span>
+              </div>
+              <span className="text-[#120B06] font-semibold">₹99</span>
             </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="text-[#4BB04F] w-5 h-5 mt-1" />
-              <span className="text-gray-700 text-sm">
-                Professionally written and formatted project reports.
-              </span>
+            <li className="flex items-start justify-between gap-3 border-b pb-2">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="text-[#4BB04F] w-5 h-5 mt-1" />
+                <span className="text-gray-700 text-sm font-medium">
+                  PowerPoint Presentation (PPT)
+                </span>
+              </div>
+              <span className="text-[#120B06] font-semibold">₹49</span>
             </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="text-[#4BB04F] w-5 h-5 mt-1" />
-              <span className="text-gray-700 text-sm">
-                ATS-friendly resumes to boost your career opportunities.
-              </span>
+            <li className="flex items-start justify-between gap-3 border-b pb-2">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="text-[#4BB04F] w-5 h-5 mt-1" />
+                <span className="text-gray-700 text-sm font-medium">
+                  NTCC Thesis / Project Report
+                </span>
+              </div>
+              <span className="text-[#120B06] font-semibold">₹399</span>
             </li>
-            <li className="flex items-start gap-3">
-              <CheckCircle className="text-[#4BB04F] w-5 h-5 mt-1" />
-              <span className="text-gray-700 text-sm">
-                Customized projects aligned with your career goals.
-              </span>
+            <li className="flex items-start justify-between gap-3">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="text-[#4BB04F] w-5 h-5 mt-1" />
+                <span className="text-gray-700 text-sm font-medium">
+                  Complete Project (with Documentation)
+                </span>
+              </div>
+              <span className="text-[#120B06] font-semibold">₹599</span>
             </li>
           </ul>
 

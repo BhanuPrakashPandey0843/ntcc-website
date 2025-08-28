@@ -9,20 +9,20 @@ export default function Services() {
   const features = [
     {
       img: phone1,
-      title: "Easy Registration & Login",
-      desc: "Get started quickly with our simple sign-up process. Register using email, phone number, or social media accounts.",
+      title: "Helping Amity Students",
+      desc: "We provide complete NTCC project support for Amity students, including PPTs, reports, coding, and proper guidance – all at affordable prices.",
       layout: "text-top", // text above image
     },
     {
       img: phone2,
-      title: "Quick Add to Cart",
-      desc: "Shopping has never been this fast and convenient. Add items with a tap and checkout instantly.",
+      title: "Trusted by Brands",
+      desc: "Our work isn’t limited to students. We also collaborate with startups and businesses, delivering presentations, documentation, and tech solutions.",
       layout: "text-bottom", // text below image
     },
     {
       img: phone3,
-      title: "Smart Search & Filters",
-      desc: "Find exactly what you need in seconds with powerful search and advanced filters.",
+      title: "Supporting BIT Mesra",
+      desc: "From final year projects to research papers, we’ve guided many BIT Mesra students with documentation, viva prep, and end-to-end project support.",
       layout: "text-top-right", // right card → text above image
     },
   ];
@@ -49,7 +49,7 @@ export default function Services() {
         transition={{ duration: 0.6 }}
         className="text-4xl md:text-5xl font-bold text-[#120B06] mb-4"
       >
-        Key <span className="text-[#4BB04F]">Features</span>
+        Who <span className="text-[#4BB04F]">We Help</span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0 }}
@@ -58,9 +58,8 @@ export default function Services() {
         transition={{ delay: 0.2, duration: 0.6 }}
         className="max-w-2xl mx-auto text-gray-600 mb-16 text-lg leading-relaxed"
       >
-        Our grocery app is designed to make your shopping experience faster,
-        smarter, and more enjoyable. From easy registration to quick checkout,
-        everything is at your fingertips.
+        From students to businesses, Helpers provides reliable, affordable, and 
+        high-quality support. Here’s how we make a difference:
       </motion.p>
 
       {/* Features grid */}

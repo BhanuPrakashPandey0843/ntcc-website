@@ -5,42 +5,47 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    text: "This service saved me so much time! I received my project along with complete documentation and a presentation, everything was smooth and professional.",
-    name: "Aarav Sharma",
-    role: "Final Year Student",
+    text: "Helpers made my NTCC project so easy! They provided a PPT, report, and proper guidance at a price I could actually afford. Truly a lifesaver in my final semester.",
+    name: "Aditya Mehra",
+    role: "Amity Student",
     img: "https://static.vecteezy.com/system/resources/previews/012/971/549/non_2x/unknown-person-with-paper-bag-on-hand-feel-confused-and-frustrated-man-or-woman-with-package-with-face-expression-feeling-doubts-illustration-free-vector.jpg",
     color: "#4BB04F",
   },
   {
-    text: "Super affordable and high quality. They helped me build a project that boosted my resume instantly. Highly recommended!",
-    name: "Sophia Johnson",
-    role: "CS Graduate",
+    text: "I was struggling with my research paper, but Helpers delivered a well-structured and plagiarism-free draft on time. Couldn’t believe the quality at this price!",
+    name: "Simran Kaur",
+    role: "Final Year Student",
     img: "https://tse2.mm.bing.net/th/id/OIP.tXjqeJqt56RD_rcnh9rSFwHaH_?r=0&cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3",
     color: "#48407D",
   },
   {
-    text: "Amazing support team! They delivered on time via email with a proper PPT and report. Truly student-friendly prices.",
-    name: "Rahul Verma",
-    role: "Engineering Student",
+    text: "They helped me create a complete semester project with proper documentation and coding support. The team even cleared my doubts on WhatsApp. Highly recommend Helpers!",
+    name: "Rohit Singh",
+    role: "B.Tech Student",
     img: "https://tse2.mm.bing.net/th/id/OIP.tXjqeJqt56RD_rcnh9rSFwHaH_?r=0&cb=thfc1&rs=1&pid=ImgDetMain&o=7&rm=3",
     color: "#F98531",
   },
   {
-    text: "The personalized guidance helped me prepare for interviews with strong projects in my portfolio. Couldn’t ask for more!",
-    name: "Emily Carter",
-    role: "Job Seeker",
+    text: "Thanks to Helpers, I got a full project ready for my BTI final year. They included PPT, code, and explanation notes which also helped me in my viva. Super student-friendly team!",
+    name: "Neha Verma",
+    role: "BTI Final Year Student",
     img: "https://images.pexels.com/photos/5728888/pexels-photo-5728888.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
     color: "#FFB800",
   },
 ];
 
-// Reusable card
+// Reusable testimonial card
 const TestimonialCard = ({ t }) => (
   <div className="min-w-[320px] max-w-[350px] bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between mx-4 transition-transform duration-300 hover:scale-105">
+    {/* Quote icon */}
     <i className="ri-double-quotes-l text-4xl mb-4" style={{ color: t.color }} />
-    <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-4">
+
+    {/* Testimonial text */}
+    <p className="text-gray-600 text-sm leading-relaxed mb-6 break-words whitespace-normal">
       {t.text}
     </p>
+
+    {/* User info */}
     <div className="flex items-center gap-4 mt-auto">
       <img
         src={t.img}
@@ -80,12 +85,12 @@ const Testimonials = () => {
         className="max-w-2xl mx-auto text-center text-gray-600 mb-16 text-lg leading-relaxed"
       >
         Real feedback from students and professionals who trusted us with their
-        projects, resumes, and presentations.
+        projects, research papers, and presentations.
       </motion.p>
 
       {/* Row 1 → left to right */}
       <motion.div
-        className="flex whitespace-nowrap mb-10 group"
+        className="flex mb-10 group"   // 🔴 removed whitespace-nowrap
         animate={{ x: ["-100%", "0%"] }}
         transition={{
           repeat: Infinity,
@@ -100,7 +105,7 @@ const Testimonials = () => {
 
       {/* Row 2 → right to left */}
       <motion.div
-        className="flex whitespace-nowrap group"
+        className="flex group"   // 🔴 removed whitespace-nowrap
         animate={{ x: ["0%", "-100%"] }}
         transition={{
           repeat: Infinity,
@@ -117,3 +122,4 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
+

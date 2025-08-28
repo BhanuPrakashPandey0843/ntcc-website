@@ -2,34 +2,11 @@
 
 import { motion } from "framer-motion";
 import { RiMailLine, RiInstagramLine } from "react-icons/ri";
-import React, { useState } from "react";
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const Contact = () => {
-  const [status, setStatus] = useState(""); // success | error | loading
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    const formData = new FormData(e.target);
-
-    try {
-      const res = await fetch("https://formspree.io/f/yourFormId", {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        e.target.reset();
-      } else {
-        setStatus("error");
-      }
-    } catch (err) {
-      setStatus("error");
-    }
-  };
+  const [state, handleSubmit] = useForm("xovnvbop"); // replace with your Formspree form ID
 
   return (
     <section className="font-[Rubik] bg-[#F9FFF9] text-[#120B06] px-6 py-16 relative">
@@ -72,7 +49,7 @@ const Contact = () => {
               </span>
               <div>
                 <p className="font-medium">Email</p>
-                <p className="text-gray-600 text-sm">Yourservice@gmail.com</p>
+                <p className="text-gray-600 text-sm">helpersntcc@gmail.com</p>
               </div>
             </div>
           </div>
@@ -90,94 +67,91 @@ const Contact = () => {
             We value your input
           </h3>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Name fields in a row */}
-            <div className="grid grid-cols-2 gap-3">
+          {state.succeeded ? (
+            <p className="text-green-600 text-center font-medium">
+              ✅ Message Sent Successfully!
+            </p>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Name fields */}
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  name="first_name"
+                  placeholder="First name"
+                  required
+                  className="w-full p-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
+                />
+                <input
+                  type="text"
+                  name="last_name"
+                  placeholder="Last name"
+                  required
+                  className="w-full p-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
+                />
+              </div>
+
+              {/* Email */}
               <input
-                type="text"
-                name="first_name"
-                placeholder="First name"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email"
                 required
                 className="w-full p-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
               />
-              <input
-                type="text"
-                name="last_name"
-                placeholder="Last name"
-                required
-                className="w-full p-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
               />
-            </div>
 
-            {/* Email */}
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-              className="w-full p-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
-            />
+              {/* Location + Phone */}
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="Location"
+                  required
+                  className="w-full p-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
+                />
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Phone"
+                  required
+                  className="w-full p-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
+                />
+              </div>
 
-            {/* Location + Phone */}
-            <div className="grid grid-cols-2 gap-3">
-              <input
-                type="text"
-                name="location"
-                placeholder="Location"
+              {/* Problem Statement */}
+              <textarea
+                name="problem_statement"
+                placeholder="Describe your problem statement..."
+                rows="3"
                 required
-                className="w-full p-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
+                className="w-full p-3 rounded-2xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
+              ></textarea>
+              <ValidationError
+                prefix="Message"
+                field="problem_statement"
+                errors={state.errors}
               />
-              <input
-                type="text"
-                name="phone"
-                placeholder="Phone"
-                required
-                className="w-full p-3 rounded-full border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
-              />
-            </div>
 
-            {/* Problem Statement */}
-            <textarea
-              name="problem_statement"
-              placeholder="Describe your problem statement..."
-              rows="3"
-              required
-              className="w-full p-3 rounded-2xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#4BB04F]"
-            ></textarea>
-
-            {/* Submit Button */}
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              type="submit"
-              disabled={status === "loading"}
-              className="w-full bg-[#4BB04F] text-white font-medium py-3 rounded-full shadow hover:bg-[#3a9440] transition-colors"
-            >
-              {status === "loading" ? "Sending..." : "Submit"}
-            </motion.button>
-          </form>
+              {/* Submit */}
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+                type="submit"
+                disabled={state.submitting}
+                className="w-full bg-[#4BB04F] text-white font-medium py-3 rounded-full shadow hover:bg-[#3a9440] transition-colors"
+              >
+                {state.submitting ? "Sending..." : "Submit"}
+              </motion.button>
+            </form>
+          )}
         </motion.div>
       </div>
-
-      {/* Popup Notification */}
-      {status === "success" && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-6 right-6 bg-[#4BB04F] text-white px-6 py-3 rounded-lg shadow-lg"
-        >
-          ✅ Message Sent Successfully!
-        </motion.div>
-      )}
-      {status === "error" && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="fixed bottom-6 right-6 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg"
-        >
-          ❌ Failed to send. Try again.
-        </motion.div>
-      )}
     </section>
   );
 };
